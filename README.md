@@ -1,3 +1,4 @@
+```
 project_root/
 │
 ├── main.py                    # Основной файл для запуска бота
@@ -6,6 +7,7 @@ project_root/
 │   ├── __init__.py
 │   ├── logging_setup.py       # Настройка логирования
 │   ├── network.py             # Сетевые утилиты
+|   ├── server_info.py         # Вывод информации о сервере
 │   └── dialog_history.py      # Работа с историей диалогов
 ├── handlers/
 │   ├── __init__.py
@@ -16,3 +18,4 @@ project_root/
 └── services/
     ├── __init__.py
     └── mistral_service.py     # Сервис для работы с Mistral AI
+```
