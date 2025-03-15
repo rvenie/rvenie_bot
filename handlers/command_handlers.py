@@ -1,6 +1,8 @@
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
+from utils.system_monitor import get_system_info, format_system_info
+
 
 from config import DEFAULT_PARAMS, AVAILABLE_MODELS, MAX_DIALOG_HISTORY
 from config import MAX_TEXT_LENGTH, MAX_PHOTO_SIZE, MAX_FILE_SIZE, MAX_VOICE_DURATION
@@ -95,3 +97,12 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['current_model'] = "mistral-small-latest"
     context.user_data['params'] = DEFAULT_PARAMS.copy()
     await update.message.reply_text("✅ Настройки сброшены к значениям по умолчанию")
+
+
+async def server_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """
+    Обрабатываем команду /server. Показываем информацию о сервере.
+    """
+    system_info = get_system_info()
+    formatted_info = format_system_info(system_info)
+    await update.message.reply_text(formatted_info)

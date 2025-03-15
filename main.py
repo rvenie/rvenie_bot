@@ -12,7 +12,7 @@ from utils.logging_setup import setup_logger
 from utils.network import check_internet
 from handlers.command_handlers import (
     start_command, help_command, #model_command, 
-    params_command, reset_command, clear_command
+    params_command, reset_command, clear_command, server_command
 )
 from handlers.message_handlers import handle_message
 from handlers.callback_handlers import button_callback
@@ -56,6 +56,7 @@ def main():
         # app.add_handler(CommandHandler('model', model_command))
         app.add_handler(CommandHandler('params', params_command))
         app.add_handler(CommandHandler('reset', reset_command))
+        app.add_handler(CommandHandler('server', server_command))
         app.add_handler(CommandHandler('clear', clear_command))
 
         # Добавляем обработчик callback-запросов для кнопок
