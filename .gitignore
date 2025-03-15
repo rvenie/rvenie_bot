@@ -1,3 +1,5 @@
 bot_env
 .env
 *.log
+_*
+__pycache__
