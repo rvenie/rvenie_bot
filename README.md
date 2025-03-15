@@ -7,7 +7,7 @@ project_root/
 │   ├── __init__.py
 │   ├── logging_setup.py       # Настройка логирования
 │   ├── network.py             # Сетевые утилиты
-|   ├── server_info.py         # Вывод информации о сервере
+|   ├── system_monitor.py         # Вывод информации о сервере
 │   └── dialog_history.py      # Работа с историей диалогов
 ├── handlers/
 │   ├── __init__.py
